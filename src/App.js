@@ -11,7 +11,6 @@ export default class App extends Component {
     return (
       <div>
         <Router>
-         {/* <div className="g-signin2" data-onsuccess="onSignIn"></div> */}
         <Switch>
           <Route path="/Home">
             <Home/>

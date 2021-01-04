@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from 'react';
+import Home from "./Component/Home";
+import Login from "./Login";
+import {BrowserRouter as Router ,Switch,Route} from "react-router-dom";
+import "./App.css";
+export default class App extends Component {
+  responseGoogle = (response) => {
+    console.log(response);
+  }
+  render() {
+    return (
+      <div>
+        <Router>
+         {/* <div className="g-signin2" data-onsuccess="onSignIn"></div> */}
+        <Switch>
+          <Route path="/Home">
+            <Home/>
+          </Route>
+          <Route path="/">
+            <Login/>
+          </Route>
+        </Switch>
+        </Router>
+      </div>
+    )
+  }
 }
-
-export default App;
